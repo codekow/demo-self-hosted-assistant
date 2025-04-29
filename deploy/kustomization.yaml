@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonAnnotations:
+  source: https://github.com/codekow/demo-self-hosted-assistant.git
+
+labels:
+- includeSelectors: false
+  pairs:
+    demo: self-hosted-assistant
+
+components:
+  - components/branding
+  - components/enable-intel-gpu
+
+resources:
+  - base
